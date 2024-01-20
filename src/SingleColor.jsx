@@ -8,7 +8,9 @@ const SingleColor = ({ index, color }) => {
     if (navigator.clipboard) {
       try {
         await navigator.clipboard.writeText(`#${hex}`)
-        toast.success('Color copied to clipboard')
+        toast.success(`#${hex.toUpperCase()} Copied to clipboard`, {
+          autoClose: 5000,
+        })
       } catch (error) {
         toast.error('Failed to copy color to clipboard')
       }
