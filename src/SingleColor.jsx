@@ -9,7 +9,7 @@ const SingleColor = ({ index, color }) => {
       try {
         await navigator.clipboard.writeText(`#${hex}`)
         toast.success(`#${hex.toUpperCase()} Copied to clipboard`, {
-          autoClose: 5000,
+          autoClose: 3000,
         })
       } catch (error) {
         toast.error('Failed to copy color to clipboard')
@@ -36,7 +36,6 @@ SingleColor.propTypes = {
   color: PropTypes.shape({
     hex: PropTypes.string.isRequired,
     weight: PropTypes.number.isRequired,
-    // Add other properties as needed based on your actual data structure
   }).isRequired,
 }
 
